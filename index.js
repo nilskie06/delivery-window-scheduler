@@ -71,4 +71,23 @@ function _logisticsHelpers() {
   };
 }
 
+
+// ─── Error handling utilities ────────────────────────────────────────────────
+class LogisticsError extends Error {
+  constructor(message, code, details = {}) {
+    super(message);
+    this.name = 'LogisticsError';
+    this.code = code;
+    this.details = details;
+    this.timestamp = new Date().toISOString();
+  }
+}
+
+function _logisticsErrorGuard(fn, context = 'unknown') {
+  return function(...args) {
+    try { return fn.apply(this, args); }
+    catch (e) { throw new LogisticsError(`${context}: ${e.message}`, 'OPERATION_FAILED', { args: args.length, cause: e.message }); }
+  };
+}
+
 module.exports = { DeliveryWindowScheduler };

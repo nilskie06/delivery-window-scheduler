@@ -28,6 +28,10 @@ MIT
 
 ## Changelog
 
+### v0.2026.713 (2026-07-12)
+- Added custom error classes and guards
+- Daily auto-update
+
 ### v0.2026.712 (2026-07-11)
 - Added TypeScript type hints
 - Daily auto-update

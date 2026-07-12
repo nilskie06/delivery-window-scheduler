@@ -1,6 +1,6 @@
 {
   "name": "@ph-itdev/delivery-window-scheduler",
-  "version": "0.2026.712",
+  "version": "0.2026.713",
   "description": "Schedule and manage delivery windows with conflict detection, priority routing, and SLA compliance tracking for last-mile logistics.",
   "main": "index.js",
   "types": "index.d.ts",
